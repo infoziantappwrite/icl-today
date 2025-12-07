@@ -107,10 +107,11 @@ const CourseDetails = ({ user }) => {
                     <img src={course.image} alt={course.title} className="preview-image" />
                     <div className="preview-content">
                       <div className="price-section">
-                        <span className="price-current">₹{course.price} + GST</span>
+                        <span className="price-current">₹{course.price}</span>
                         {course.originalPrice && (
                           <span className="price-original">₹{course.originalPrice}</span>
                         )}
+                        <span style={{ fontSize: '0.75em', color: '#95a5a6', display: 'block', marginTop: '4px' }}>*18% taxes applicable</span>
                       </div>
                       
                       {isEnrolled ? (

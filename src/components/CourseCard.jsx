@@ -39,7 +39,10 @@ const CourseCard = ({ course }) => {
               </span>
             )}
           </div>
-          <div className="course-price">{formatPrice(course.price)} + GST</div>
+          <div className="course-price">
+            {formatPrice(course.price)} + GST
+            <span style={{ fontSize: '0.7em', color: '#95a5a6', display: 'block', marginTop: '2px' }}>*18% taxes applicable</span>
+          </div>
         </div>
         <div className="course-footer">
           <span className="course-level">
