@@ -4,14 +4,14 @@ import CourseDetails from '../pages/CourseDetails';
 
 // Mapping of friendly slugs to course IDs
 const COURSE_SLUG_MAP = {
-  'cyber': '69356cecf683f9a7de80e78d',
+  //'cyber': '69356cecf683f9a7de80e78d',
   'cybersecurity': '693570fe74010598c3968435',
   'aiml': '693570fe74010598c3968453',
-  'ai-ml': '680a024024dff2cef862633e',
-  'webdev': '680a024024dff2cef8626340',
-  'web-development': '680a024024dff2cef8626340',
-  'data-science': '69355cb901edc7e5c1e49a57',
-  'datascience': '69355cb901edc7e5c1e49a57',
+ // 'ai-ml': '680a024024dff2cef862633e',
+//   'webdev': '680a024024dff2cef8626340',
+//   'web-development': '680a024024dff2cef8626340',
+//   'data-science': '69355cb901edc7e5c1e49a57',
+//   'datascience': '69355cb901edc7e5c1e49a57',
   'fullstack': '693570fe74010598c3968470',
   'dsa': '693570fe74010598c3968491'
   // Add more mappings as needed
