@@ -85,7 +85,7 @@ function App() {
             <Route path="/profile" element={<ComingSoon />} />
             <Route path="/enrolled-courses" element={<ComingSoon />} />
             <Route path="/payment-history" element={<ComingSoon />} />
-            <Route path="/inquiries" element={<Inquiries />} />
+            <Route path="/inquiries" element={user ? <Inquiries user={user} /> : <Login handleLogin={handleLogin} user={user} />} />
             
             {/* External Course Redirects */}
             <Route path="/aiml" element={<Redirect link="https://aicl.infoziant.com/courses/680a024024dff2cef862633e" />} />
