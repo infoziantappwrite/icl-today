@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import EY from '../../../assets/CompanyImages/EYglobal.png';
+import EY from '../../../assets/companyimages/EYglobal.png';
 import Flipkart from '../../../assets/companyimages/Flipkart.png';
 import Intel from '../../../assets/companyimages/Intel.png';
 import Uber from '../../../assets/companyimages/Uber.png';

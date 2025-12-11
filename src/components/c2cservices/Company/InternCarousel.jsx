@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import EY from "../../../assets/CompanyImages/EYglobal.png";
+import EY from "../../../assets/companyimages/EYglobal.png";
 import Flipkart from "../../../assets/companyimages/Flipkart.png";
 import Intel from "../../../assets/companyimages/Intel.png";
 import Uber from "../../../assets/companyimages/Uber.png";
