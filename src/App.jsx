@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer copy';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
@@ -18,7 +19,16 @@ import VerifyEmail from './pages/VerifyEmail';
 import ResendVerification from './pages/ResendVerification';
 import PaymentSuccess from './pages/PaymentSuccess';
 import NotFound from './pages/NotFound';
-import './App.css';
+import Placement from './pages/Placement';
+import Internship from './pages/Internship';
+import COE from './pages/COE';
+import Training from './pages/Training';
+import CodeChef from './pages/CodeChef';
+import EduTech from './pages/EduTech';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import Refund from './pages/Refund';
+
 import Inquiries from './pages/Inquiries';
 import InquiryPage from './pages/InquiryPage';
 import Redirect from './components/Redirect';
@@ -59,14 +69,29 @@ function App() {
     <Router>
       <div className="app">
         <Toaster position="top-center" />
-        <Navbar/>
+        <Header />
+        <ScrollToTop />
         
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<ComingSoon />} />
+            {/* Main Routes */}
+            <Route path="/" element={<Placement />} />
+            <Route path="/placement" element={<Placement />} />
+            <Route path="/internship" element={<Internship />} />
+            <Route path="/coe" element={<COE />} />
+            <Route path="/training" element={<Training />} />
+            <Route path="/codechef" element={<CodeChef />} />
+            <Route path="/edutech" element={<EduTech />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/termsandconditions" element={<TermsAndConditions />} />
+            <Route path="/refund" element={<Refund />} />
+            
+            {/* Course Routes */}
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:id" element={<CourseDetails user={user} />} />
             <Route path="/course/:slug" element={<CourseSlugRedirect user={user} />} />
+            
+            {/* Auth Routes */}
             <Route path="/login" element={<Login handleLogin={handleLogin} user={user} />} />
             <Route path="/register" element={<Register handleLogin={handleLogin} user={user} />} />
 

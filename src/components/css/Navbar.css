@@ -1,0 +1,125 @@
+/* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 2%;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:0px 4px 6px #848484;
+}
+
+.infz-logo {
+  width: 70%;
+}
+
+.nav-links a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4b42ff;
+}
+
+.mobile-nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar active links */
+.navbar .nav-links a.active {
+  color: #13009f;
+  font-weight: bold;
+  border-bottom: #13009f solid 3px;
+}
+.mobile-nav-menu a.active {
+  color: #6651ff;
+  font-weight: bold;
+  border-bottom: #6b57ff solid 3px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 3%;
+  }
+
+  .nav-links {
+    display: none; /* Hide desktop links on mobile */
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    color: #000000;
+  }
+
+  .mobile-bar {
+    height: 4px;
+    width: 100%;
+    background-color: rgb(10, 0, 119);
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .mobile-nav-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%; /* Ensure full-screen width */
+    background: linear-gradient(to right, #010b14, #000000);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    z-index: 1000;
+    transition: transform 0.5s ease;
+    transform: translateX(100%); /* Initially hidden */
+  }
+
+  .mobile-nav-menu.open {
+    transform: translateX(0%); /* Slide in when open */
+  }
+
+  .mobile-close-menu {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .mobile-nav-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .mobile-nav-menu a:hover {
+    color: #845cff64;
+  }
+
+  .infz-logo {
+    width: 60%;
+  }
+}

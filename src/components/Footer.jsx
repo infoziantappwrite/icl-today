@@ -24,9 +24,9 @@ const Footer = () => {
           </div>
           
           <div className="footer-col">
-            <h4 className="footer-subtitle">Powered by</h4>
-            <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>Infoziant IT Solutions Inc.</p>
-            <p style={{ color: '#9ca3af', fontSize: '0.75rem', marginTop: '0.5rem' }}>SOC 2 | ISO 27001:2022 Certified</p>
+            <h4 className="footer-subtitle">About ICL</h4>
+            <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>Infoziant Centre of Learning</p>
+            <p style={{ color: '#9ca3af', fontSize: '0.75rem', marginTop: '0.5rem' }}>Powered by Infoziant IT Solutions Inc.</p>
           </div>
           
           <div className="footer-col">

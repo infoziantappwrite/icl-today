@@ -1,0 +1,227 @@
+/* Blog Page Main Styles */
+.blog_page {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Banner Styles */
+.service-banner {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.service-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  z-index: 1;
+}
+
+.sb-intro {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.sb-intro h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sb-intro p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog Header Styles */
+.blog-header-l {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-title-l {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.blog-title-l::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #3b82f6, #0ea5e9);
+  border-radius: 2px;
+}
+
+/* Blog Container and Cards */
+
+.blog-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-width:100%;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.blog-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-height: 100%;
+  flex: 0 1 300px;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} 
+
+.blog-card img {
+  width: 100%;
+  min-height: 180px;
+  max-height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.blog-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 1.5rem 1.5rem 1rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.read-more-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0 1.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #2563eb;
+}
+.meta-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  /* color:darkslategrey; */
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.category-pill {
+  background-color: gainsboro; /* light gray */
+  color: #111827;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.blog-date {
+  color: #4B5563;
+  margin-left: 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .blog-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sb-intro h1 {
+    font-size: 2.5rem;
+  }
+  
+  .sb-intro p {
+    font-size: 1rem;
+  }
+  
+  .blog-title-l {
+    font-size: 2rem;
+  }
+  
+  .blog-container {
+    padding: 0 1rem 3rem;
+    gap: 1.5rem;
+  }
+  
+  .service-banner {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sb-intro h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-title-l {
+    font-size: 1.75rem;
+  }
+  
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-banner {
+    height: 50vh;
+    min-height: 350px;
+  }
+}

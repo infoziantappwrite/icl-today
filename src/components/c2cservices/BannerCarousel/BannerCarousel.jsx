@@ -1,0 +1,228 @@
+// Updated responsive BannerCarousel component
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
+import placementImage from "../../../assests/Images/Banner/18-1.webp";
+import internshipImage from "../../../assests/Images/Banner/workplace.png";
+import edutechImage from "../../../assests/Images/edutech/edutech.gif";
+import CoeImage from "../../../assests/Images/Banner/coes1.png";
+import CodeChefImage from "../../../assests/Images/Banner/codchef.png";
+import { Link } from "react-router-dom";
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 80 : -80,
+    opacity: 0,
+    scale: 0.98,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? -80 : 80,
+    opacity: 0,
+    scale: 0.98,
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+function BannerCarousel() {
+  const slides = [
+    {
+      badgeText: "Campus to Corporate Services",
+      title: "Placement Support",
+      subtitle: "Bridging Institutions & Industry",
+      description:
+        "We bridge the gap between institutions and industry by enabling seamless placement opportunities tailored to your students' career goals.",
+      primaryBtnText: "Explore Now",
+      primaryBtnLink: "/services/placement",
+      secondaryBtnText: "Contact Us",
+      secondaryBtnLink: "#contact",
+      image: placementImage,
+    },
+    {
+      badgeText: "Campus to Corporate Services",
+      title: "Internship Programs",
+      subtitle: "Empowering Students with Real-World Experience",
+      description:
+        "Our internship programs are designed to provide students with hands-on experience, bridging the gap between academic learning and industry requirements. We collaborate with top companies to offer internships that enhance skills and boost employability.",
+      primaryBtnText: "Explore Now",
+      primaryBtnLink: "#get-started",
+      secondaryBtnText: "Contact Us",
+      secondaryBtnLink: "#contact",
+      image: internshipImage,
+    },
+    {
+      badgeText: "Campus to Corporate Services",
+      title: "Edutech Solutions",
+      subtitle: "From Learning to Hiring — All in One Place",
+      description:
+        "Infoziant’s Edutech platform is a smart, AI-powered career ecosystem designed to guide students from learning to landing their dream job.",
+      primaryBtnText: "Explore Platform",
+      primaryBtnLink: "#get-started",
+      secondaryBtnText: "Get Started",
+      secondaryBtnLink: "#get-started",
+      image: edutechImage,
+    },
+    {
+      badgeText: "Campus to Corporate Services",
+      title: "Centre Of Excellence",
+      subtitle: "Turning Campuses into Innovation Hubs",
+      description:
+        "Our Centre of Excellence (CoE) initiative empowers colleges to build skill-driven learning environments in Cybersecurity & AI.",
+      primaryBtnText: "Explore CoE",
+      primaryBtnLink: "#get-started",
+      secondaryBtnText: "Contact Us",
+      secondaryBtnLink: "#contact",
+      image: CoeImage,
+    },
+    {
+      badgeText: "Campus to Corporate Services",
+      title: "CodeChef Training",
+      subtitle: "Empower Students with CodeChef – Powered by Infoziant",
+      description:
+        "As a licensed partner of CodeChef, Infoziant brings a global learning platform to your institution.",
+      primaryBtnText: "Explore CodeChef",
+      primaryBtnLink: "#get-started",
+      secondaryBtnText: "Contact Us",
+      secondaryBtnLink: "#contact",
+      image: CodeChefImage,
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [showForm, setShowForm] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const activeSlide = slides[current];
+
+  useEffect(() => {
+    if (slides.length <= 1 || isHovered) return;
+
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, slides.length]);
+
+  const goToSlide = (index) => {
+    if (index === current) return;
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  };
+
+  return (
+    <section
+      ref={ref}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative px-4 sm:px-6 w-full min-h-[600px] sm:h-[530px] overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white text-gray-900 flex items-center"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ repeat: Infinity, duration: 8 }}
+          className="absolute top-[-60px] left-[-60px] w-52 sm:w-72 h-52 sm:h-72 bg-blue-300 rounded-full opacity-30 blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ repeat: Infinity, duration: 10 }}
+          className="absolute bottom-[-80px] right-[-60px] w-56 sm:w-80 h-56 sm:h-80 bg-blue-400 rounded-full opacity-30 blur-3xl"
+        />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto py-10 lg:py-16">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="grid lg:grid-cols-2 gap-10 items-center min-h-[420px]"
+          >
+            {/* TEXT */}
+            <div className="space-y-5 max-w-xl text-center lg:text-left">
+              <span className="inline-flex items-center px-4 py-1.5 bg-blue-100 rounded-full border text-blue-600 text-sm font-medium">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                {activeSlide.badgeText}
+              </span>
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
+                {activeSlide.title}
+              </h1>
+
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-blue-500">
+                {activeSlide.subtitle}
+              </h2>
+
+              <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
+                {activeSlide.description}
+              </p>
+
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                <Link
+                  to={activeSlide.primaryBtnLink}
+                  className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-300/40 transition inline-flex items-center justify-center"
+                >
+                  {activeSlide.primaryBtnText}
+                </Link>
+
+                <button
+                  onClick={() => setShowForm(true)}
+                  className="px-6 sm:px-8 py-3 border rounded-full font-semibold bg-white"
+                >
+                  {activeSlide.secondaryBtnText}
+                </button>
+              </div>
+            </div>
+
+            {/* IMAGE */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white rounded-[32px] w-[260px] h-[220px] sm:w-[360px] sm:h-[300px] lg:w-[460px] lg:h-[380px] flex items-center justify-center">
+                <img
+                  src={activeSlide.image}
+                  alt={activeSlide.title}
+                  className="max-w-full max-h-full object-contain rounded-3xl"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* DOTS */}
+        <div className="mt-8 flex justify-center gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "w-6 bg-gradient-to-r from-blue-500 to-teal-400"
+                  : "w-2.5 bg-blue-200"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+          <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+        </div>
+      )}
+    </section>
+  );
+}
+
+export default BannerCarousel;

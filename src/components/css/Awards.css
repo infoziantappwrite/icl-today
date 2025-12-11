@@ -1,0 +1,236 @@
+.sb-intro{
+  padding-top: 120px;
+  padding-left: 20px;
+}
+
+.sb-intro h1{
+  background: linear-gradient(0deg, #15F5BA, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.awards_page {
+  display: flex;
+  flex-direction: column; /* Default for desktop view */
+}
+
+
+.category-container-award {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    color: white;
+  }
+
+  .award-desc{
+    color: white;
+  }
+  
+  .category-award {
+    background: transparent;
+    border: none;
+    color: black;
+    padding: 10px 20px;  /* Ensure consistent padding */
+    margin: 0 10px;      /* Add margin between buttons */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-bottom 0.3s; /* Smooth transition */
+    border-bottom: 2px solid transparent; /* Add underline effect */
+  }
+  
+  .category-award:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+  }
+  
+  .active-award {
+    border-bottom: 2px solid black; /* Underline the active category */
+  }
+  
+  .card-grid-award {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Keep consistent 3-column layout */
+    gap: 30px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .card-award {
+    background: linear-gradient(to right, #010b14, #000000);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .card-award:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-image-award {
+    width: 100%;               
+    height: 150px;              
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .card-title-award {
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .card-description-award {
+    color: white;
+    font-size: 14px;
+  }
+
+  /* Modal container */
+  .modal-award {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+  z-index: 1000;
+  overflow: hidden; 
+  }
+/* .modal-award {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  } */
+
+  /* Modal content */
+.modal-content-award {
+  position: relative;
+  width: auto;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+  /* .modal-content-award {
+    position: relative;
+    width: 50%;         
+    height: 50%;        
+    padding: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .modal-image-award {
+    width: 100%;
+  height: auto;
+  max-height: 80vh; /* Ensure the image fits within the view */
+  object-fit: contain;
+  }
+  
+  /* .modal-image-award {
+    width: 100%;        
+    height: 100%;       
+    object-fit: contain; 
+    border-radius: 0;   
+  } */
+  
+  /* Close button */
+
+  .close-award {
+    position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  }
+  /* .close-award {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+  } */
+  
+  .close-award:hover {
+    color: red;
+  }
+
+  @media(max-width:480px){
+    .sb-intro{
+      padding-top: 15px;
+      padding-left: 20px;
+    }
+    
+    .category-award{
+      font-size: 11px;
+      padding: 5px;
+    }
+    .card-grid-award {
+      grid-template-columns: 1fr;
+    }
+    .card-award {
+      margin-bottom: 4%;
+    }
+    .modal-content-award {
+      max-width: 95%;
+      padding: 1px;
+    }
+    .close-award {
+      font-size: 20px;
+      top: 5px;
+      right: 10px;
+    }
+  }
+  
+
+  @media(max-width:768px){
+    .sb-intro{
+      padding-top: 0px;
+      padding-left: 20px;
+    }
+    
+    .category-award{
+      font-size: 11px;
+      padding: 5px;
+    }
+    .card-grid-award {
+      grid-template-columns: 1fr;
+    }
+    .card-award {
+      margin-bottom: 4%;
+    }
+    .modal-content-award {
+      max-width: 95%;
+      padding: 1px;
+    }
+    .close-award {
+      font-size: 20px;
+      top: 5px;
+      right: 10px;
+    }
+  }
+  

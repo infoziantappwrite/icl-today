@@ -1,0 +1,171 @@
+.why-choose-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Hide tabs by default (effective on mobile) */
+.tabs {
+  display: none;
+}
+
+.tabs button {
+  font-size: 1rem;
+  color: #5b3db3;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid #45d0c1;
+  color: #5b3db3;
+}
+
+/* Style the dropdown for mobile */
+.mobile-tabs-dropdown {
+  display: block; /* Show dropdown on mobile */
+  width: 100%; /* Full width */
+  margin: 20px 0; /* Spacing for visual separation */
+}
+
+.mobile-tabs-dropdown select {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for better touch interaction */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* Background color */
+  font-size: 1rem; /* Text size */
+  color: #333; /* Text color */
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.content h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.content ul li {
+  font-size: 1rem;
+  color: #333;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #45d0c1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.get-started-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #002affc4 , #45d0c1);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+.get-started-btn:hover {
+  background: linear-gradient(45deg, #45d0c1, #5b3db3);
+}
+
+.static-image {
+  max-width: 100%;
+  width: 400px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Desktop-specific styles */
+@media (min-width: 768px) {
+  .why-choose-us {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 0 50px; /* Increase padding on sides for desktop */
+  }
+
+  .content {
+    max-width: 50%;
+    text-align: left;
+    margin-right: 20px;
+  }
+
+  .static-image {
+    max-width: 28%;
+    width: auto;
+    margin-top: 30px;
+
+  }
+
+  .content ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between items */
+    justify-items: start; /* Aligns each item to the start (left) */
+  }
+
+  .mobile-tabs-dropdown {
+    display: none; /* Hide dropdown on desktop */
+  }
+
+  .tabs {
+    display: none; /* Show tabs on desktop */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .static-image {
+    display: none; /* Hide the static image on mobile devices */
+  }
+}

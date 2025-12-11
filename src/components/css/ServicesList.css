@@ -1,0 +1,606 @@
+.service-list-ul{
+    list-style-type: none;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    padding: 1% 1% 5% 1%;
+}
+
+.sl-mv{
+    list-style-type: none;
+}
+
+.service-banner{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+.sb-intro{
+    color: white;
+    text-align: center;
+}
+.sb-intro h1{
+    font-size: 60px;
+}
+.sb-intro p{
+    font-size: 20px;
+}
+.service-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    z-index: 1; /* Keep the overlay behind the navbar */
+    pointer-events: none; /* Ensure it doesn’t block interactions */
+  }
+  
+  .service-banner > * {
+    position: relative;
+    z-index: 2; /* Ensure the navbar is above the overlay */
+  }
+  
+
+.tag-sl{
+    background: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text; 
+  color: transparent;
+
+    font-size: 22px;
+    border: 1px solid rgb(218 218 225);
+    padding: 0.4% 2%;
+    width: auto;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.sl-title-img{
+    width: 100%;
+    height: 100%;
+}
+
+.sl-li-2{
+    width: 60%;
+}
+.sl-li-1{
+    width: 40%;
+}
+
+.sl-features-1 {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 5%;
+}
+
+.sl-points {
+    display: flex;
+    flex-basis: 48%; 
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 6%; 
+}
+
+.sl-icon{
+    margin-right: 5%;
+}
+
+.sl-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sl-info div{
+    width: 50%;
+}
+.sl-info img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.sl-info-div div{
+    margin-bottom: 5%;
+}
+
+.sl-info-div{
+    padding: 3% 2%;
+}
+  
+.head-1{
+    font-size: 30px;
+    text-align: center;
+}
+
+/* stand out */
+.stand-out-sl{
+    text-align: center;
+    color: black;
+    padding: 4%;
+}
+.sso-cards{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    padding: 3% 10%;
+}
+.sso-card-1, .sso-card-2{
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 3%;
+    text-align: left;
+}
+.sso-card-1 p, .sso-card-2 p{
+    line-height: 30px;
+    color: #4d4a4a;
+}
+.sso-card-1 h2, .sso-card-2 h2{
+    background-color: #dbdbdb;
+    width: auto;
+    border-radius: 30px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: 500;
+    color: #4d4a4a;
+    display: inline-block;
+}
+.sso-card-1 h2{
+    width: auto;
+}
+.sso-card-1{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.sso-card-2{
+    background-image: linear-gradient(to top, #f8d0cc 0%, #f5efef 100%);
+}
+
+/* services */
+.services-section-sl {
+    text-align: center;
+
+    padding: 3% 2%;
+    /* background-color: black; */
+    background: linear-gradient(to right, #010b14, #000000); 
+    margin-bottom: 3%;
+}
+
+.services-section-mobile-sl {
+    display: none;
+  }
+
+.services-section-sl h1{
+    color: white;
+    font-size: 30px;
+}
+
+.services-p-sl{
+    color: #cbc3c3;
+    width: 60%;
+    margin: auto;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.services-container-sl {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.slide-img-sl {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #15F5BA;
+}
+
+/* .vertical-line {
+    height: 300px;
+    width: 1px;
+    background-color: rgb(179, 177, 177); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+} */
+
+.item-id {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+.service-text-sl {
+    text-align: left;
+    width: 50%;
+    margin-left: 5%;
+}
+
+.service-text-sl h3{
+    background: linear-gradient(90deg, #15F5BA, #0066ff); /* Neon blue gradient */
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.service-text-sl p{
+    color: #c9bdbd;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.sso-h5{
+    font-size: 20px;
+}
+.sl-points-title{
+    
+    background: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  -webkit-background-clip: text; /* For Safari */
+  -webkit-text-fill-color: transparent; /* For Safari */
+  background-clip: text; /* Standard */
+  color: transparent;
+}
+
+/* responsiveness */
+@media (max-width: 400px) {
+    .services-section-sl {
+      display: none;
+    }
+  
+    .services-section-mobile-sl {
+        text-align: center;
+      display: block;
+      background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    padding: 4% 3%;
+    }
+    .services-section-mobile-sl h1{
+        color: white;
+        font-size: 20px;
+    }
+    .services-p-sl{
+        width: 100%;
+        line-height: 25px;
+        font-size: 15px;
+    }
+    .service-img-m-sl{
+        width: 80vw;
+    }
+    .service-li-m-sl{
+        padding: 2%;
+        border: 1px solid rgb(173, 170, 170);
+        border-radius: 8px;
+        margin-bottom: 5%;
+    }
+    .service-li-m-sl h1{
+        background: linear-gradient(90deg, #15F5BA, #0066ff); 
+  -webkit-background-clip: text;
+  color: transparent;
+    }
+    .service-li-m-sl p{
+        color: rgb(213 210 210);
+        font-size: 15px;
+    }
+    .service-list-ul{
+        display: block;
+    }
+    .sl-li-1{
+        width: 100%;
+    }
+    .sl-li-2{
+        width: 100%;
+        padding: 2%;
+    }
+    .tag-sl{
+        font-size: 20px;
+        width: auto;
+    }
+    .bt-h1{
+        font-size: 20px;
+    }
+    .sl-features-1{
+        display: block;
+    }
+    .sl-points{
+        margin-bottom: 10%;
+        border: 1px solid;
+        border-image: linear-gradient(90deg, #15F5BA, #0066ff);
+  border-image-slice: 1;
+  padding: 2%;
+    }
+    .head-1{
+        font-size: 20px;
+    }
+    .sso-h1{
+        font-size: 20px;
+    }
+    .sso-cards{
+        display: block;
+        padding: 2% 1%;
+    }
+    .sso-card-1 h2, .sso-card-2 h2{
+        width: auto;
+        font-size: 17px;
+        padding: 1% 3%;
+    }
+    .sso-card-1, .sso-card-2{
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .sso-card-1 p, .sso-card-2 p{
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .sl-points h3{
+        font-size: 20px;
+    }
+    .sl-points p{
+        font-size: 15px;
+    }
+    .bt-p{
+        font-size: 15px;
+    }
+    .service-banner{
+        height: 40vh;
+    }
+    .sb-intro h1{
+        font-size: 20px;
+    }
+    .sb-intro{
+        margin: 5%;
+        margin-top: 4vh;
+    }
+    .sb-intro p {
+        font-size: 15px;
+    }
+  }
+
+
+  /* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .service-banner {
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .sb-intro h1 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      text-align: center;
+      padding-top: 60px;
+    }
+  
+    .sb-intro p {
+      font-size: 1rem;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.5;
+    }
+  
+    .servicesList {
+      padding: 0 15px;
+    }
+  
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 0;
+    }
+  
+    .service-text-sl {
+      width: 90%;
+      font-size: 1rem;
+      margin: 0 auto;
+    }
+  
+    .image-container-s {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .slide-img-sl {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
+  
+    .services-section-mobile-sl {
+      display: block;
+      padding: 20px;
+    }
+  
+    .service-li-m-sl {
+      margin-bottom: 40px;
+      padding: 0 10px;
+    }
+  
+    .service-li-m-sl h1 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+  
+    .service-img-m-sl {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+  
+    .services-p-sl {
+      font-size: 1.1rem;
+      padding: 0 15px;
+      line-height: 1.5;
+    }
+  
+    .sl-features-1 {
+      flex-direction: column;
+      padding: 10px 0;
+    }
+  
+    .sl-points {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  
+    .sl-points-title {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+  
+    .sl-icon {
+      margin-bottom: 10px;
+    }
+  
+    .bt-h1 {
+      font-size: 1.6rem;
+      margin: 15px 0;
+    }
+  
+    .bt-p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    /* Mobile footer adjustments */
+    footer {
+      padding: 20px 10px;
+      text-align: center;
+    }
+  }
+  
+
+  @media (min-width: 401px) and (max-width: 768px) {
+  .services-section-sl {
+    display: none;
+  }
+
+  .services-section-mobile-sl {
+    display: block;
+    padding: 4% 5%;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    text-align: center;
+  }
+
+  .services-p-sl {
+    font-size: 16px;
+    line-height: 26px;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .service-li-m-sl {
+    border: 1px solid rgb(173, 170, 170);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #111;
+  }
+
+  .service-li-m-sl h1 {
+    background: linear-gradient(90deg, #15F5BA, #0066ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .service-li-m-sl p {
+    color: rgb(213 210 210);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+ .service-img-m-sl {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 15px; /* Centers the image horizontally */
+    border-radius: 8px;
+    display: block; /* Makes the image a block-level element */
+}
+
+
+  .bt-h1,
+  .head-1,
+  .sso-h1 {
+    font-size: 22px;
+  }
+
+  .bt-p,
+  .sso-card-1 p,
+  .sso-card-2 p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .sso-cards {
+    display: block;
+    padding: 3%;
+  }
+
+  .sso-card-1,
+  .sso-card-2 {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 8px;
+  }
+
+  .sso-card-1 h2,
+  .sso-card-2 h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sl-points {
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid;
+    border-image: linear-gradient(90deg, #15F5BA, #0066ff);
+    border-image-slice: 1;
+  }
+
+  .sl-points h3 {
+    font-size: 20px;
+  }
+
+  .sl-points p {
+    font-size: 15px;
+  }
+
+  .service-banner {
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .sb-intro {
+    padding: 5%;
+    text-align: center;
+  }
+
+  .sb-intro h1 {
+    font-size: 22px;
+  }
+
+  .sb-intro p {
+    font-size: 16px;
+  }
+}

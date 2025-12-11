@@ -1,0 +1,162 @@
+.cybarhomeBanner{
+.quickscan-section{
+  padding: 3% 2% 5% 2%;
+  text-align: center;
+}
+.quickscan-section h1{
+  font-size: 2rem;
+}
+.quickscan-section p{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 3%;
+}
+
+.select-box {
+  padding: 20px;
+  background-color: #d8d5d5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  margin: auto;
+}
+
+.scan-address-inp{
+  padding: 15px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid grey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  width: 50%;
+  font-size: 17px;
+}
+
+.gs-btn-scan{
+  background: linear-gradient(45deg, #15F5BA, #0066ff); /* Neon blue gradient */
+  padding: 0.6% 4%;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 18px;
+  transition: background 0.4s ease;
+  border: none;
+  border-radius: 10px;
+}
+
+.gs-btn-scan:hover{
+  background: linear-gradient(185deg, #15F5BA, #0066ff); /* Neon blue gradient */
+  transition: background 0.4s ease;
+}
+
+.backdrop {
+  position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.5); 
+z-index: 999;
+}
+
+.popup-scan {
+  position: fixed; 
+top: 30%;
+left: 25%;
+transform: translate(-50%, -50%);
+width: 50%; 
+height: 50%; 
+background-color: white;
+border-radius: 10px;
+padding: 20px;
+z-index: 1000;
+box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); 
+overflow: auto;
+}
+
+.close-button-scan {
+  background: linear-gradient(90deg, #15F5BA, #0066ff);
+
+color: white;
+border: none;
+padding: 5px;
+border-radius: 5px;
+cursor: pointer;
+position: absolute;
+top: 20px;
+right: 20px;
+}
+
+.ul-scan {
+  list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+gap: 20px; 
+}
+
+.li-scan {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 10px;
+  cursor: pointer;
+}
+
+.li-scan:hover {
+  background-color: #f0f0f0;
+}
+
+.icon-scan {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+@media(max-width:400px){
+  .quickscan-section h1{
+    font-size: 23px;
+  }
+  .quickscan-section p{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 10%;
+  }
+  .select-box{
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 5%;
+  }
+  .scan-address-inp{
+    padding: 5px;
+    width: 100%;
+    font-size: 13px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+  .gs-btn-scan{
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 5%;
+  }
+  .quickscan-section{
+    padding: 6% 2%;
+  }
+  .popup-scan{
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+  }
+}
+
+}
+

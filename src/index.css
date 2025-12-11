@@ -1,67 +1,97 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
- 
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.main-content {
+  flex: 1;
+  padding: 0;
+  width: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow-x: hidden;
+}
+
+.stroke-text {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.highlight {
+  background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+/* Remove padding and margin from react-slick slides */
+.no-slick-padding .slick-slide {
+  padding: 2px !important;
+  margin: 0 !important;
+}
+
+.no-slick-padding .slick-list {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Start from left */
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.animate-slide-in {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+.HomeBanner-bg-back{
+  background-image: url("./assests/info-bg.jpg");
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 1%;
 }

@@ -1,0 +1,127 @@
+.blog_page{
+  display: flex;
+  flex-direction: column; /* Default for desktop view */
+}
+
+
+
+.blog-container-l {
+    padding: 5% 5%;
+    border-bottom: 1px solid #3f3d3d;
+  }
+  
+  .blog-header-l {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .blog-title-l {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  }
+  
+  .blog-description-l {
+    font-size: 1.2rem;
+    color: #666;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .blog-grid-l {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .blog-card-l {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #f1eded;
+  }
+
+  .read-more-l{
+    background: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    border: none;
+    color: #01baef;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .rm-i-l{
+    font-size: 20px;
+  }
+  
+  .blog-card-l:hover {
+    transform: translateY(-10px);
+  }
+  
+  .image-container-l {
+    height: 250px;
+  }
+  
+  .blog-image-l {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .blog-content-l {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .blog-category-l {
+    font-size: 0.9rem;
+    color: #4f46e5;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .blog-title-text-l {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .blog-author-l {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .author-name-l {
+    color: #4f46e5;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .blog-grid-l {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .blog-title-l{
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .blog-grid-l {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .blog-title-l{
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }

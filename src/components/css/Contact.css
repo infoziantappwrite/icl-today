@@ -1,0 +1,298 @@
+.contact_page{
+  display: flex;
+  flex-direction: column; 
+}
+
+.contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+
+.contact-header {
+  text-align: center;
+  background: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  animation: fadeIn 1s ease-in-out; 
+  font-size: 20px; 
+  margin-bottom: 20px;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding-left: 10px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+ 
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.contact-icon {
+  width: 50px;
+  height: auto;
+  background: linear-gradient(90deg, #15F5BA, #0066ff);
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  margin-right: 25px;
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-title {
+  font-size: 20px; /* Further reduced title size */
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: linear-gradient(315deg, #20bf55 0%, #01baef 74%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.contact-address {
+  color: black;
+  font-size: 16px; /* Further reduced address size */
+  line-height: 45px;
+}
+
+.contact-address p {
+  margin: 0;
+}
+
+.contact-desc {
+  color: black;
+  font-size: 16px; /* Further reduced description size */
+  margin-bottom: 5px;
+}
+
+.contact-email {
+  height: 160px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .contact-header {
+      font-size: 20px; /* Further reduced mobile header size */
+  }
+  .contact-row {
+      flex-direction: column; /* Stack items vertically */
+      gap: 40px; /* Reduce gap between items */
+  }
+
+  .contact-item {
+      display: flex;
+      flex-direction: column; /* Stack icon and text vertically */
+      align-items: center; /* Center horizontally */
+      justify-content: center; /* Center vertically */
+      padding: 15px; /* Adjust padding */
+      text-align: center; /* Center text */
+  }
+
+  .contact-icon {
+      width: 60px; /* Reduce icon size */
+      height: 60px; /* Set fixed height */
+      margin-bottom: 10px; /* Add space below icon */
+      margin-right: 0; /* Remove margin-right for centering */
+  }
+
+  .contact-info-title {
+      font-size: 20px; /* Further reduced title size */
+  }
+
+  .contact-address, .contact-desc {
+      font-size: 14px; /* Further reduced address and desc size */
+      line-height: 30px;
+  }
+  .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+      font-size: 18px; /* Further reduced mobile header size */
+  }
+  .contact-icon {
+      width: 50px; /* Further reduce icon size */
+      height: 50px; /* Set fixed height */
+  }
+
+  .contact-info-title {
+      font-size: 18px; /* Further reduced title size */
+  }
+
+  .contact-address, .contact-desc {
+      font-size: 12px; /* Further reduced address and desc size */
+      line-height: 24px;
+  }
+  .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+}
+
+
+.service-banner {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+  }
+  
+  .sb-intro {
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .sb-intro h1 {
+    font-size: 60px;
+    
+  }
+  
+  .sb-intro p {
+    font-size: 20px;
+  }
+  
+  .service-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .service-banner > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Medium Devices (tablets, 768px and below) */
+  @media (max-width: 768px) {
+    .service-banner {
+      height: 50vh;
+    }
+    
+    .sb-intro h1 {
+      font-size: 40px;
+    }
+  
+    .sb-intro p {
+      font-size: 18px;
+    }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+  }
+  
+  /* Small Devices (phones, 576px and below) */
+  @media (max-width: 576px) {
+    .service-banner {
+      height: 45vh;
+    }
+  
+    .sb-intro {
+      margin: 10%;
+      margin-top: 6vh;
+      z-index: 1;
+    }
+  
+    .sb-intro h1 {
+      font-size: 30px;
+    }
+  
+    .sb-intro p {
+      font-size: 16px;
+    }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+  }
+  
+  /* Extra Small Devices (400px and below) */
+  @media (max-width: 400px) {
+    .service-banner {
+      height: 40vh;
+    }
+  
+    .sb-intro {
+      margin: 5%;
+      margin-top: 4vh;
+      z-index: 1;
+    }
+  
+    .sb-intro h1 {
+      font-size: 20px;
+    }
+  
+    .sb-intro p {
+      font-size: 15px;
+    }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
+  }

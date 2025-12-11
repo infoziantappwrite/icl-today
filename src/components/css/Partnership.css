@@ -1,0 +1,113 @@
+.partnership {
+  text-align: center;
+  margin: 3% 6%;
+  
+  overflow: hidden; /* Hide overflow for smooth scrolling */
+}
+
+.parhtership_content{
+  /* background-color: rgb(8, 8, 8); */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.partnership h1 {
+  font-size: 35px;
+  font-weight:bolder;
+}
+
+.partnership p {
+  font-size: 1.1rem;
+  color: #3c3c3c;
+  line-height: 1.6;
+}
+
+/* Ribbon container for infinite scrolling */
+.ribbon-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px; /* Space between images */
+  animation: scrollLeft 1000s linear infinite; /* Infinite scrolling animation */
+  padding: 20px 0;
+  white-space: nowrap; /* Prevent line breaks to ensure horizontal scrolling */
+}
+
+.ribbon-item {
+  flex-shrink: 0; /* Prevent shrinking */
+ 
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.ribbon-item img {
+  width: auto;
+  height: 60px; /* Consistent image height */
+  margin-right:30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Duplicate the images to create an infinite loop effect */
+.ribbon-container::before {
+  content: '';
+  display: block;
+  width: 100%; /* To keep space before the loop starts */
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5000%);
+  }
+}
+
+@media (max-width:1040px){
+  .ribbon-container {
+    gap: 20px;
+    animation: scrollLeft 800s linear infinite; /* Faster scrolling for mobile */
+  }
+
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .ribbon-container {
+    gap: 10px;
+    animation: scrollLeft 500s linear infinite; /* Faster scrolling for mobile */
+  }
+
+  .ribbon-item img {
+    height: 60px;
+  }
+
+  .partnership h1 {
+    font-size: 28px;
+  }
+
+  .partnership p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ribbon-container {
+    gap: 10px;
+    animation: scrollLeft 500s linear infinite; /* Even faster scrolling for smaller screens */
+  }
+
+  .ribbon-item img {
+    height: 50px;
+    margin-right:5px;
+  }
+
+  .partnership h1 {
+    font-size: 24px;
+  }
+
+  .partnership p {
+    font-size: 14px;
+  }
+}

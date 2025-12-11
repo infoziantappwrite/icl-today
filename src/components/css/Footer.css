@@ -1,0 +1,169 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+    background: #121212; /* Dark background */
+    color: white;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.8); /* Slightly transparent dark overlay */
+    z-index: -1;
+}
+
+.footer-company-info {
+    width: 35%;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.company-details p {
+    margin: 8px 0;
+    color: white;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.footer-social-ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.footer-social-ul li {
+    transition: transform 0.3s ease;
+}
+
+.footer-social-ul li:hover {
+    transform: scale(1.2);
+}
+
+.footer-options {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.footer-links-section{
+    margin-top: 5%;
+}
+
+.footer-links-section h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    /* border-bottom: 2px solid #15F5BA; */
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+    background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+-webkit-background-clip: text; /* For Safari */
+-webkit-text-fill-color: transparent; /* For Safari */
+background-clip: text; /* Standard */
+color: transparent;
+}
+
+.footer-links-section h4:hover {
+    color: #ffffff; /* Change to white on hover */
+}
+
+.footer-links {
+    text-decoration: none;
+    color: rgb(213, 210, 210); /* Lighter gray for links */
+    font-size: 15px;
+}
+
+.footer-links p {
+    margin: 8px 0;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links p:hover {
+    color: #15F5BA; /* Bright accent on hover */
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+/* Copyright section */
+.footer-copyright {
+    text-align: center;
+    padding: 12px 0;
+    background: linear-gradient(to right, #010b14, #000000);
+    color: rgb(213, 210, 210); /* Lighter gray */
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Hover effect for social icons */
+.footer-social-ul li svg {
+    fill: #ffffff; /* White color for icons */
+    transition: fill 0.3s ease;
+}
+
+.footer-social-ul li:hover svg {
+    fill: #15F5BA; /* Bright accent on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-company-info {
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .footer-options {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+
+    .footer-links-section h4 {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-company-info {
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .footer-options {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-links-section h4 {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}

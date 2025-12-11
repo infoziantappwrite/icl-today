@@ -1,0 +1,52 @@
+/* Center the loader on the page */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  /* Loader styling */
+  .loader {
+    display: flex;
+    justify-content: space-between;
+    width: 30px;
+  }
+  
+
+ .bar-loader {
+    width: 5.2px;
+    height: 35px;
+    border-radius:5px;
+    background-color: #4b2999; 
+    animation: loading 0.8s ease-in-out infinite;
+  }
+  
+  /* Change the color of the middle bar */
+  .bar-loader:nth-child(2) {
+    background-color: #57eef1; 
+  }
+  
+  .bar-loader:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .bar-loader:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .bar-loader:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  
