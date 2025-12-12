@@ -132,7 +132,10 @@ const CourseDetails = ({ user }) => {
                     <img src={course.image} alt={course.title} className="preview-image" />
                     <div className="preview-content">
                       <div className="price-section">
-                        <span className="price-current">₹{course.price} (inclusive of GST)</span>
+                      <span className="price-current">
+    ₹{course.price} <span className="gst-text">(GST inclusive)</span>
+  </span>
+
                         {course.originalPrice && (
                           <span className="price-original">₹{course.originalPrice}</span>
                         )}
@@ -166,7 +169,7 @@ const CourseDetails = ({ user }) => {
                           <li><i className="fas fa-infinity"></i> Full lifetime access</li>
                           <li><i className="fas fa-mobile-alt"></i> Mobile & Desktop access</li>
                           <li><i className="fas fa-certificate"></i> Certificate of completion</li>
-                          <li><i className="fas fa-headset"></i> Instructor support</li>
+                       
                         </ul>
                       </div>
                     </div>
