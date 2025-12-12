@@ -4,28 +4,32 @@ import { getCourseById } from '../utils/api';
 import toast from 'react-hot-toast';
 import InquiryModal from '../components/InquiryModal';
 import './CourseDetails.css'; // Make sure to create this CSS file next
+import kareLogo from "../assets/companyAndCollege/Kalasalingam.png";
+import infoziantLogo from "../assets/companyAndCollege/infoziant.png";
 
 const CourseDetails = ({ user }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [course, setCourse] = useState(null);
+  console.log(course);
+
   const [isLoading, setIsLoading] = useState(true);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
   const [showInquiryModal, setShowInquiryModal] = useState(false);
-  
+
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
         setIsLoading(true);
         const data = await getCourseById(id);
         setCourse(data);
-        
+
         // Check if user is enrolled
         if (user && user.courses) {
           setIsEnrolled(user.courses.includes(id));
         }
-        
+
         setIsLoading(false);
       } catch (error) {
         console.error('Failed to fetch course details:', error);
@@ -33,20 +37,20 @@ const CourseDetails = ({ user }) => {
         setIsLoading(false);
       }
     };
-    
+
     fetchCourseDetails();
   }, [id, user]);
-  
+
   const handleEnrollment = () => {
     setShowInquiryModal(true);
   };
-  
+
   const handleEnrollmentSuccess = (inquiry) => {
     toast.success(`Successfully enrolled in ${inquiry.courseName}!`);
     // If you want to show some indicator that they've enrolled
     setIsEnrolled(true);
   };
-  
+
   if (isLoading) {
     return (
       <div className="loading">
@@ -54,13 +58,30 @@ const CourseDetails = ({ user }) => {
       </div>
     );
   }
-  
+
   if (!course) {
     return <div className="not-found">Course not found</div>;
   }
-  
+
   return (
     <div className="course-details-page">
+
+      <div className="kare-infoziant-banner">
+  <div className="banner-logos">
+   <img src={infoziantLogo} alt="Infoziant Logo" className="banner-logo infoziant-size" />
+
+    {/* Vertical line separator */}
+    <div className="banner-separator"></div>
+
+    <img src={kareLogo} alt="KARE Logo" className="banner-logo" />
+  </div>
+
+  <div className="banner-text">
+    <h1 className="banner-title">KARE OFFICE OF INDUSTRY RELATIONS & INFOZIANT</h1>
+    <h3 className="banner-subtitle">Emerging Tech Credit Program</h3>
+  </div>
+</div>
+
       {/* Hero Section with Course Banner */}
       <div className="course-hero">
         <div className="course-hero-overlay">
@@ -72,7 +93,7 @@ const CourseDetails = ({ user }) => {
                 </div>
                 <h1 className="course-hero-title">{course.title}</h1>
                 <p className="course-hero-subtitle">{course.subtitle}</p>
-                
+
                 <div className="course-hero-meta">
                   <div className="meta-item">
                     <i className="fas fa-star"></i>
@@ -113,7 +134,7 @@ const CourseDetails = ({ user }) => {
                         )}
                         {/* <span style={{ fontSize: '0.75em', color: '#95a5a6', display: 'block', marginTop: '4px' }}>*18% taxes applicable</span> */}
                       </div>
-                      
+
                       {isEnrolled ? (
                         <button className="btn-enrolled" disabled>
                           <i className="fas fa-check-circle"></i> Already Enrolled
@@ -123,6 +144,16 @@ const CourseDetails = ({ user }) => {
                           <i className="fas fa-shopping-cart"></i> Enroll Now
                         </button>
                       )}
+
+                      <p style={{
+                        marginTop: "8px",
+                        fontSize: "0.85rem",
+                        color: "#555",
+                        fontWeight: 600,
+                        textAlign: "center"
+                      }}>
+                        * Only for Kalasalingam Academy of Research and Education
+                      </p>
 
                       <div className="course-includes">
                         <h4>This course includes:</h4>
@@ -166,32 +197,32 @@ const CourseDetails = ({ user }) => {
             <div className="content-section">
               <div className="course-tabs">
                 <div className="tabs-header">
-                  <button 
+                  <button
                     className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
                     onClick={() => setActiveTab('overview')}
                   >
                     <i className="fas fa-info-circle"></i> Overview
                   </button>
-                  <button 
+                  <button
                     className={`tab-btn ${activeTab === 'curriculum' ? 'active' : ''}`}
                     onClick={() => setActiveTab('curriculum')}
                   >
                     <i className="fas fa-list-ul"></i> Curriculum
                   </button>
-                  <button 
+                  <button
                     className={`tab-btn ${activeTab === 'instructor' ? 'active' : ''}`}
                     onClick={() => setActiveTab('instructor')}
                   >
                     <i className="fas fa-user-tie"></i> Instructor
                   </button>
                 </div>
-                
+
                 <div className="tabs-content">
                   {activeTab === 'overview' && (
                     <div className="tab-pane fade-in">
                       <h3>Course Description</h3>
                       <div className="course-description" dangerouslySetInnerHTML={{ __html: course.description }}></div>
-                      
+
                       {course.benefits && course.benefits.length > 0 && (
                         <>
                           <h3 className="benefits-title">
@@ -209,7 +240,7 @@ const CourseDetails = ({ user }) => {
                       )}
                     </div>
                   )}
-                  
+
                   {activeTab === 'curriculum' && (
                     <div className="tab-pane fade-in">
                       <h3>Course Curriculum</h3>
@@ -250,7 +281,7 @@ const CourseDetails = ({ user }) => {
                       )}
                     </div>
                   )}
-                  
+
                   {activeTab === 'instructor' && (
                     <div className="tab-pane fade-in">
                       <div className="instructor-card">
@@ -278,9 +309,9 @@ const CourseDetails = ({ user }) => {
                         <div className="instructor-bio">
                           <h4>About the Instructor</h4>
                           <p>
-                            Experienced instructor with expertise in {course.topics.slice(0, 3).join(', ')}, 
-                            and other related technologies. With over 10 years in the industry, brings 
-                            real-world experience to help students master complex concepts through 
+                            Experienced instructor with expertise in {course.topics.slice(0, 3).join(', ')},
+                            and other related technologies. With over 10 years in the industry, brings
+                            real-world experience to help students master complex concepts through
                             practical examples and hands-on projects.
                           </p>
                         </div>
@@ -293,11 +324,11 @@ const CourseDetails = ({ user }) => {
           </div>
         </div>
       </div>
-      
+
       {/* Inquiry Modal */}
       {showInquiryModal && course && (
-        <InquiryModal 
-          isOpen={showInquiryModal} 
+        <InquiryModal
+          isOpen={showInquiryModal}
           onClose={() => setShowInquiryModal(false)}
           course={course}
           onEnrollmentSuccess={handleEnrollmentSuccess}

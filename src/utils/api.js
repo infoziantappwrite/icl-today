@@ -27,6 +27,8 @@ api.interceptors.request.use(
 export const getAllCourses = async () => {
   try {
     const response = await api.get('/courses');
+    console.log(response);
+    
     return response.data;
   } catch (error) {
     console.error('Error fetching courses:', error);
