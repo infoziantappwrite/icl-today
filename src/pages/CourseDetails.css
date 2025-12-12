@@ -1095,3 +1095,136 @@
     font-size: 0.8rem;
   }
 } 
+
+
+/* Modern Collaboration Banner */
+.kare-infoziant-banner {
+  width: 100%;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #dcdfe3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logos Row */
+.banner-logos {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* increased spacing */
+  margin-bottom: 12px;
+}
+
+/* Logo styles */
+.banner-logo {
+  height: 70px;   /* increased size */
+  width: auto;
+  object-fit: contain;
+}
+
+.infoziant-size {
+  height: 90px !important;   /* Increase as needed */
+}
+
+/* Vertical separator line */
+.banner-separator {
+  width: 2px;
+  height: 70px;   /* matches logo height */
+  background: rgb(116, 116, 116);
+  border-radius: 5px;
+}
+  
+/* Text Section */
+.banner-text {
+  margin-top: 10px;
+}
+
+.banner-title {
+  margin: 0;
+  font-size: 2rem;           /* bigger title */
+  font-weight: 800;
+  color: #003366;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner-subtitle {
+  margin-top: 6px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0055a5;
+  letter-spacing: 0.4px;
+}
+
+
+/* ---------------------------------------
+   MOBILE RESPONSIVE BANNER
+--------------------------------------- */
+@media (max-width: 768px) {
+
+  .kare-infoziant-banner {
+    padding: 20px 10px;
+  }
+
+  .banner-logos {
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Reduce general logo size */
+  .banner-logo {
+    height: 55px;
+  }
+
+  /* Infoziant logo slightly bigger for visibility */
+  .infoziant-size {
+    height: 70px !important;
+  }
+
+  /* Vertical separator smaller on mobile */
+  .banner-separator {
+    height: 50px;
+    width: 2px;
+  }
+
+  /* Text adjustments */
+  .banner-title {
+    font-size: 1.45rem;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Ultra-small screens (<= 480px) */
+@media (max-width: 480px) {
+
+  .banner-logos {
+    gap: 15px;
+  }
+
+  .banner-logo {
+    height: 45px;
+  }
+
+  .infoziant-size {
+    height: 60px !important;
+  }
+
+  .banner-separator {
+    height: 40px;
+  }
+
+  .banner-title {
+    font-size: 1.25rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.9rem;
+  }
+}
