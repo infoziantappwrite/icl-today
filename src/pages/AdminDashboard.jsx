@@ -21,7 +21,7 @@ const AdminDashboard = ({ user }) => {
     try {
       setIsLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/course-inquiries/dashboard/stats', {
+      const response = await fetch('https://icl.today/api/course-inquiries/dashboard/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -290,6 +290,10 @@ const AdminDashboard = ({ user }) => {
                 <Link to="/inquiries" className="action-btn">
                   <i className="fas fa-list"></i>
                   <span>View All Inquiries</span>
+                </Link>
+                <Link to="/email-management" className="action-btn action-btn-email">
+                  <i className="fas fa-envelope"></i>
+                  <span>Email Management</span>
                 </Link>
                 <button className="action-btn" onClick={fetchDashboardStats}>
                   <i className="fas fa-sync-alt"></i>

@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import EmailManagement from './pages/EmailManagement';
 import Profile from './pages/Profile';
 import EnrolledCourses from './pages/EnrolledCourses';
 import PaymentHistory from './pages/PaymentHistory';
@@ -107,6 +108,7 @@ function App() {
             
             {/* Protected Routes - Coming Soon */}
             <Route path="/dashboard" element={user ? <AdminDashboard user={user} /> : <Login handleLogin={handleLogin} user={user} />} />
+            <Route path="/email-management" element={user ? <EmailManagement user={user} /> : <Login handleLogin={handleLogin} user={user} />} />
             <Route path="/profile" element={<ComingSoon />} />
             <Route path="/enrolled-courses" element={<ComingSoon />} />
             <Route path="/payment-history" element={<ComingSoon />} />

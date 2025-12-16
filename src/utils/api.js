@@ -252,4 +252,45 @@ export const manuallyVerifyPayment = async (inquiryId, paymentId = null, notes =
   }
 };
 
+// Batch Email System APIs
+export const getEmailStats = async () => {
+  try {
+    const response = await api.get('/course-inquiries/emails/stats');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching email stats:', error);
+    throw error;
+  }
+};
+
+export const getPendingEmails = async (limit = 100, skip = 0) => {
+  try {
+    const response = await api.get(`/course-inquiries/emails/pending?limit=${limit}&skip=${skip}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching pending emails:', error);
+    throw error;
+  }
+};
+
+export const sendBatchEmails = async (inquiryIds) => {
+  try {
+    const response = await api.post('/course-inquiries/emails/send-batch', { inquiryIds });
+    return response.data;
+  } catch (error) {
+    console.error('Error sending batch emails:', error);
+    throw error;
+  }
+};
+
+export const sendAllEmails = async (dryRun = false) => {
+  try {
+    const response = await api.post('/course-inquiries/emails/send-all', { dryRun });
+    return response.data;
+  } catch (error) {
+    console.error('Error sending all emails:', error);
+    throw error;
+  }
+};
+
 export default api;
